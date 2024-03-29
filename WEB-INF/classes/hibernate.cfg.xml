@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>   
+<!DOCTYPE hibernate-configuration PUBLIC   
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver </property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.connection.username">WEBMEDI</property>
+		<property name="hibernate.connection.password">WEBMEDI</property>
+		
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">100</property>
+		<property name="hibernate.c3p0.idle_test_period">300</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		
+		<mapping class="model.Hibernate"/>
+		
+		<mapping class="model.clsAgendamento"/>
+		<mapping class="model.clsAtendente"/>
+		<mapping class="model.clsAutorizacao"/>
+		<mapping class="model.clsAutorizacaoNegada"/>
+		<mapping class="model.clsBloqueio"/>
+		<mapping class="model.clsBoleto"/>
+		<mapping class="model.clsCliente"/>
+		<mapping class="model.clsClinica"/>
+		<mapping class="model.clsContrato"/>
+		<mapping class="model.clsDepartamento"/>
+		<mapping class="model.clsEspecialidade"/>
+		<mapping class="model.clsFuncionario"/>
+		<mapping class="model.clsMedico"/>
+		<mapping class="model.clsMotivo"/>
+		<mapping class="model.clsMovimentacao"/>
+		<mapping class="model.clsPrevisaoPagamento"/>
+		<mapping class="model.clsProcedimento"/>
+		<mapping class="model.clsRenovacao"/>
+		<mapping class="model.clsSolicitacao"/>
+	</session-factory>
+</hibernate-configuration>
