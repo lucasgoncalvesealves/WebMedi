@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>  
+<!doctype html>  
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui" xmlns:pe="http://primefaces.org/ui/extensions">
+<h:head>
+	<link type="text/css" rel="stylesheet"
+		href="#{facesContext.externalContext.requestContextPath}/estilos/estilo.css" />
+	<h:outputStylesheet name="estilos/estilo.css" />
+	<title>.: Autorizador Webmedi - Sistema de Gestão de Benefícios</title>
+</h:head>
+
+<h:body>
+
+	<div class="posicionamento_titulo">
+			<div class="icone_estoque"></div>
+			<span><h:outputText value="Cadastro de Recargas"/></span>
+	</div>
+	
+	<h:form id="formItem">
+	
+		<div class="box_branco corner-painel">
+		
+		<div class="cabecalho_painel icone_lista_estoque" style="text-align: left;"><h:outputText value="Listagem de Itens de Estoque"/></div>
+		
+		<p:dataTable id="dtItens" var="item" value="#{principalBean.listaItens}" style="width:70%" rowKey="#{item.id}"
+					 widgetVar="dtItens"  selection="#{principalBean.itemSelecionado}" selectionMode="single"
+					 paginator="true" rows="10"  paginatorPosition="bottom" emptyMessage="Nenhum item encontrado."
+                 	 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">  
+	       
+	      	
+			<f:facet name="header">  
+	            <p:outputPanel>  
+	                <h:outputText value="Buscar em todos os campos: "/>  
+	            </p:outputPanel>  
+       		</f:facet>
+				
+	        <p:column headerText="ID" width="10%" style="text-align:right"  >  
+	            <h:outputText value="#{item.id}" style="text-align:right" />  
+	        </p:column>
+	        
+	        <p:column headerText="Descrição" width="90%" style="text-align:right" >  
+	            <h:outputText value="#{item.descricao}"/>  
+	        </p:column>
+	        
+
+			
+		</p:dataTable>
+        
+        
+		
+		</div>
+		<div style="clear: both;"></div>
+		
+		
+	</h:form>
+
+</h:body>
+</html>
